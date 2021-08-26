@@ -1,0 +1,29 @@
+.tabs {
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+.tabs-title li {
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.text {
+  text-align: left;
+  display: none;
+}
+.show {
+  display: block;
+}
+.title:hover {
+  cursor: pointer;
+}
+li.activate {
+  color: #217af0;
+}

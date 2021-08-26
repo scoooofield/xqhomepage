@@ -1,3 +1,32 @@
+.tabs {
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+.tabs-title li {
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.text {
+  text-align: left;
+  display: none;
+}
+.show {
+  display: block;
+}
+.title:hover {
+  cursor: pointer;
+}
+li.activate {
+  color: #217af0;
+}
 .page pre,
 .page .highlight {
   overflow: auto;
@@ -238,15 +267,15 @@ body {
   margin: 0;
   padding: 0;
   color: #494e52;
-  font-size: 1.8em;
+  font-size: 16px;
   line-height: 1.5;
-  font-family: "Times New Roman", FangSong, STFangsong, sans-serif;
+  font-family: "Montserrat", "Times New Roman", FangSong, STFangsong, sans-serif;
   scroll-behavior: smooth;
 }
 a,
 span,
 .btn {
-  font-family: "Times New Roman", FangSong, STFangsong, sans-serif;
+  font-family: "Montserrat", "Times New Roman", FangSong, STFangsong, sans-serif;
 }
 img {
   max-width: 100%;
@@ -486,7 +515,7 @@ blockquote p {
   text-align: right;
 }
 .page article code {
-  font-family: "Times New Roman", FangSong, STFangsong, sans-serif;
+  font-family: "Montserrat", "Times New Roman", FangSong, STFangsong, sans-serif;
   padding: 0.2rem 0.3rem;
   background: rgba(27,31,35,0.05);
   word-wrap: break-word;
@@ -543,6 +572,7 @@ blockquote p {
   padding-left: 15px;
   padding-right: 15px;
   line-height: 1;
+  text-align: center;
 }
 .author-discrip h3 {
   margin: 0px;

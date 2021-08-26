@@ -1,15 +1,15 @@
-$(function () {
+$(function() {
     // resize window
-    $(window).resize(function () {
-        if ($(window).width() < 1280 && $(window).width()>540) {
-            $(".page").css({"width": $(window).width() - $(".side-card").width() - 90, "float": "left"})
+    $(window).resize(function() {
+        if ($(window).width() < 1280 && $(window).width() > 540) {
+            $(".page").css({ "width": $(window).width() - $(".side-card").width() - 90, "float": "left" })
         } else {
             $(".page").removeAttr("style")
         }
     });
 
     // menu
-    $(".menus_icon").click(function () {
+    $(".menus_icon").click(function() {
         if ($(".header_wrap").hasClass("menus-open")) {
             $(".header_wrap").removeClass("menus-open").addClass("menus-close")
         } else {
@@ -17,7 +17,7 @@ $(function () {
         }
     })
 
-    $(".m-social-links").click(function () {
+    $(".m-social-links").click(function() {
         if ($(".author-links").hasClass("is-open")) {
             $(".author-links").removeClass("is-open").addClass("is-close")
         } else {
@@ -25,7 +25,7 @@ $(function () {
         }
     })
 
-    $(".site-nav").click(function () {
+    $(".site-nav").click(function() {
         if ($(".nav").hasClass("nav-open")) {
             $(".nav").removeClass("nav-open").addClass("nav-close")
         } else {
@@ -33,27 +33,27 @@ $(function () {
         }
     })
 
-    $(document).click(function(e){
+    $(document).click(function(e) {
         var target = $(e.target);
-        if(target.closest(".nav").length != 0) return;
+        if (target.closest(".nav").length != 0) return;
         $(".nav").removeClass("nav-open").addClass("nav-close")
-        if(target.closest(".author-links").length != 0) return;
+        if (target.closest(".author-links").length != 0) return;
         $(".author-links").removeClass("is-open").addClass("is-close")
-        if((target.closest(".menus_icon").length != 0) || (target.closest(".menus_items").length != 0)) return;
+        if ((target.closest(".menus_icon").length != 0) || (target.closest(".menus_items").length != 0)) return;
         $(".header_wrap").removeClass("menus-open").addClass("menus-close")
     })
 
     // 显示 cdtop
-    $(document).ready(function ($) {
+    $(document).ready(function($) {
         var offset = 100,
             scroll_top_duration = 700,
             $back_to_top = $('.nav-wrap');
 
-        $(window).scroll(function () {
-            ($(this).scrollTop() > offset) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible');
+        $(window).scroll(function() {
+            ($(this).scrollTop() > offset) ? $back_to_top.addClass('is-visible'): $back_to_top.removeClass('is-visible');
         });
 
-        $(".cd-top").on('click', function (event) {
+        $(".cd-top").on('click', function(event) {
             event.preventDefault();
             $('body,html').animate({
                 scrollTop: 0,
@@ -62,7 +62,7 @@ $(function () {
     });
 
     // pjax
-    $(document).pjax('a[target!=_blank]','.page', {
+    $(document).pjax('a[target!=_blank]', '.page', {
         fragment: '.page',
         timeout: 5000
     });
@@ -86,8 +86,8 @@ $(function () {
     });
 
     // smooth scroll
-    $(function () {
-        $('a[href*=\\#]:not([href=\\#])').click(function () {
+    $(function() {
+        $('a[href*=\\#]:not([href=\\#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -102,3 +102,26 @@ $(function () {
     });
 
 })
+
+
+
+
+window.onload = function() {
+    var list = document.getElementsByClassName("title");
+    var textlist = document.getElementsByClassName("text");
+    console.log(list);
+    console.log(textlist);
+    for (var i = 0; i < list.length; i++) {
+        list[i].index = i;
+        list[i].onclick = function() {
+            for (var j = 0; j < list.length; j++) {
+                list[j].className = 'title';
+            }
+            this.className = 'title activate';
+            for (var i = 0; i < textlist.length; i++) {
+                textlist[i].style.display = "none";
+            }
+            textlist[this.index].style.display = "block";
+        }
+    }
+}
